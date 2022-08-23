@@ -6,12 +6,20 @@ class Bottles
   private
 
   def first_sentence(bottles)
-    "#{bottles} #{bottle_pluralization(bottles)} of beer on the wall, " +
-    "#{bottles} #{bottle_pluralization(bottles)} of beer.\n"
+    if bottles.zero?
+      "No more bottles of beer on the wall, " +
+      "no more bottles of beer.\n"
+    else
+      "#{bottles} #{bottle_pluralization(bottles)} of beer on the wall, " +
+      "#{bottles} #{bottle_pluralization(bottles)} of beer.\n"
+    end
   end
 
   def second_sentence(bottles)
-    if bottles > 1
+    if bottles.zero?
+       "Go to the store and buy some more, " +
+      "99 bottles of beer on the wall.\n"
+    elsif bottles > 1
       "Take one down and pass it around, #{bottles - 1} " +
       "#{bottle_pluralization(bottles -1 )} of beer on the wall.\n"
     else
