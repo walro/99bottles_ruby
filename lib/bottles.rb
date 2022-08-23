@@ -3,6 +3,15 @@ class Bottles
     first_sentence(bottles) + second_sentence(bottles)
   end
 
+  def verses(start_verse, end_verse)
+    start_verse.downto(end_verse).map do |verse|
+      result = verse(verse)
+      result += "\n" unless verse == end_verse
+
+      result
+    end.join
+  end
+
   private
 
   def first_sentence(bottles)
