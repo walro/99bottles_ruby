@@ -5,11 +5,8 @@ class Bottles
 
   def verses(start_verse, end_verse)
     start_verse.downto(end_verse).map do |verse|
-      result = verse(verse)
-      result += "\n" unless verse == end_verse
-
-      result
-    end.join
+      verse(verse)
+    end.join("\n")
   end
 
   def song
