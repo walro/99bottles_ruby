@@ -8,12 +8,18 @@ class Bottles
     elsif bottles == 1
       "1 bottle of beer on the wall, " +
       "1 bottle of beer.\n" +
-      "Take it down and pass it around, no more bottles of beer on the wall.\n"
-    else bottles > 1
+      "Take it down and pass it around, " +
+      "no more bottles of beer on the wall.\n"
+    elsif bottles == 2
+      "2 bottles of beer on the wall, " +
+      "2 bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "1 bottle of beer on the wall.\n"
+    else
       "#{bottles} bottles of beer on the wall, " +
       "#{bottles} bottles of beer.\n" +
-      "Take one down and pass it around, #{bottles - 1} " +
-      "#{bottle_pluralization(bottles -1)} of beer on the wall.\n"
+      "Take one down and pass it around, " +
+      "#{bottles - 1} bottles of beer on the wall.\n"
     end
   end
 
@@ -25,15 +31,5 @@ class Bottles
 
   def song
     verses(99, 0)
-  end
-
-  private
-
-  def bottle_pluralization(bottles)
-    if bottles > 1
-      "bottles"
-    else
-      "bottle"
-    end
   end
 end
